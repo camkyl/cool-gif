@@ -1,0 +1,32 @@
+@import 'post';
+
+.body {
+    @extend %flex-center;
+    @extend %flex-column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+
+    &__logo {
+        width: 50vw;
+        height: 20vh;
+    }
+}
+
+.search {
+    @extend %flex-center;
+    width: 50vw;
+
+
+    &__field {
+        width: 80%;
+        border: 1px solid purple;
+    }
+
+    &__button {
+       background-color: purple;
+       color: white;
+    }
+}

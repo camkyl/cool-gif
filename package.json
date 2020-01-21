@@ -12,10 +12,22 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
-    "rollup": "^1.29.0"
+    "autoprefixer": "^9.7.4",
+    "css": "^2.2.4",
+    "cssnano": "^4.1.10",
+    "nano": "^8.1.0",
+    "node-sass": "^4.13.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-postcss": "^2.0.3"
   },
   "devDependencies": {
+    "postcss-normalize": "^8.0.1",
     "rollup-plugin-browsersync": "^1.1.0",
     "rollup-plugin-terser": "^5.2.0"
-  }
+  },
+  "browserslist": [
+    ">0.25%",
+    "not ie 11",
+    "not op_mini all"
+  ]
 }
