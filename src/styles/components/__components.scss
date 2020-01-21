@@ -11,7 +11,7 @@
 
     &__logo {
         width: 50vw;
-        height: 20vh;
+        height: auto;
     }
 }
 
@@ -20,13 +20,20 @@
     width: 50vw;
 
 
+
     &__field {
         width: 80%;
-        border: 1px solid purple;
+        height: 50px;
+        border: 2px solid $primary-color;
+        padding: 0px 10px;
     }
 
     &__button {
-       background-color: purple;
+       all: unset;
+       width: 51px;
+       height: 50px;
+       background-image: linear-gradient(45deg, #b343ac 5%, $primary-color 95%);
        color: white;
+       text-align: center;
     }
 }

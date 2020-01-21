@@ -1,1 +1,10 @@
 // In this file you put all styles related to typography such as p, a, h1, etc.
+
+* {
+    font-family: $main-font;
+    font-size: 14px;
+}
+
+.a, .a:visited {
+    color: $primary-color;
+}
