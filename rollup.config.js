@@ -23,16 +23,16 @@ export default {
   plugins: [
     isDevelopment && browsersync({ server: "public" }),
     isProduction && terser(),
+    babel(),
+    resolve(),
+    commonjs(),
+    isProduction && filesize(),
     postcss({
       extract: true,
       plugins: [
         postcssNormalize(/* pluginOptions */),
         autoprefixer(),
-        cssnano(),
-        babel(),
-        resolve(),
-        commonjs(),
-        filesize()
+        cssnano()
       ],
       sourceMap: isDevelopment
     })
