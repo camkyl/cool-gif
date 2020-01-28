@@ -1,24 +1,20 @@
-const browsersync = require("rollup-plugin-browsersync");
 // Common JS
 // const terser = require("rollup-plugin-terser");
 
 // ES6
+import browsersync from "rollup-plugin-browsersync";
 import { terser } from "rollup-plugin-terser";
-
-// rollup.config.js
 import postcss from "rollup-plugin-postcss";
 import cssnano from "cssnano";
-
-// const postcss = require('postcss')
-const postcssNormalize = require("postcss-normalize");
-
-const autoprefixer = require("autoprefixer");
+import postcssNormalize from "postcss-normalize";
+import autoprefixer from "autoprefixer";
+import babel from "rollup-plugin-babel";
 
 // --environment NODE_ENV:production (package.json)
 const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = isProduction === false;
 
-module.exports = {
+export default {
   input: "src/scripts/index.js",
   output: {
     file: "public/giphy.js",
@@ -32,22 +28,13 @@ module.exports = {
       plugins: [
         postcssNormalize(/* pluginOptions */),
         autoprefixer(),
-        cssnano()
+        cssnano(),
+        babel(),
+        resolve(),
+        commonjs(),
+        filesize()
       ],
       sourceMap: isDevelopment
     })
   ]
 };
-
-// ES6
-// import browsersync from 'rollup-plugin-browsersync'
-// export default {
-//   input: 'src/scripts/index.js',
-//   output: {
-//     file: 'public/giphy.js'
-//     format: "iife"
-//   },
-//   plugins: [
-//     browsersync({server: 'public'})
-//   ]
-// }
