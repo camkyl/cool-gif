@@ -9,6 +9,8 @@ import cssnano from "cssnano";
 import postcssNormalize from "postcss-normalize";
 import autoprefixer from "autoprefixer";
 import babel from "rollup-plugin-babel";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 
 // --environment NODE_ENV:production (package.json)
 const isProduction = process.env.NODE_ENV === "production";
@@ -23,10 +25,10 @@ export default {
   plugins: [
     isDevelopment && browsersync({ server: "public" }),
     isProduction && terser(),
+    isProduction && filesize(),
     babel(),
     resolve(),
     commonjs(),
-    isProduction && filesize(),
     postcss({
       extract: true,
       plugins: [
