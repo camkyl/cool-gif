@@ -19,13 +19,15 @@
     @extend %flex-center;
     width: 50vw;
 
-
-
     &__field {
         width: 80%;
         height: 50px;
         border: 2px solid $primary-color;
         padding: 0px 10px;
+
+        @include respond-to(handhelds) {
+            height: 40px;
+        }
     }
 
     &__button {
@@ -35,5 +37,9 @@
        background-image: linear-gradient(45deg, #b343ac 5%, $primary-color 95%);
        color: white;
        text-align: center;
+
+       @include respond-to(handhelds) {
+        height: 40px;
+    }
     }
 }
