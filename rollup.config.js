@@ -11,6 +11,7 @@ import autoprefixer from "autoprefixer";
 import babel from "rollup-plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import injectEnv from 'rollup-plugin-inject-env';
 
 // --environment NODE_ENV:production (package.json)
 const isProduction = process.env.NODE_ENV === "production";
@@ -37,6 +38,7 @@ export default {
         cssnano()
       ],
       sourceMap: isDevelopment
-    })
+    }),
+    injectEnv()
   ]
 };

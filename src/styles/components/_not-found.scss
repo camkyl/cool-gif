@@ -1,0 +1,8 @@
+.not-found {
+    display: none;
+
+    &.not-found--active {
+        display: block;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,28 @@
+.gallery {
+    margin-top: 16px;
+
+    @include respond-to(medium-screens) {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1; // makes gallery fill the height
+    justify-content: center;
+    align-items: flex-start;
+    }
+
+    &__item-wrapper {
+        @include respond-to(medium-screens) {
+        flex: 1;
+        min-width: 50%;
+        }
+
+        @include respond-to(wide-screens) {
+        min-width: 25%;
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+}
+
+
